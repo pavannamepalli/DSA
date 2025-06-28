@@ -4,17 +4,26 @@ public class MissingNumberFinder {
     
 
     public static void main(String[] args) {
-        int[] arr ={0,1};
+        int[] arr ={1,2,4,5};
 
-      
-        Arrays.sort(arr);
+      int k = arr.length;
 
-        for (int i = 0; i < arr.length-1; i++) {
-            if(arr[i]+1 != arr[i+1]){
+      for (int i = 1; i <= k; i++) {
 
-                System.out.println(arr[i]+1);
-            }
+        int flag = 0;
+
+        for (int j = 0; j < arr.length; j++) {
+        
+            if(arr[j] == i){
+                flag =1;
+            break;            }
             
         }
+
+        if (flag == 0) {
+            System.out.println("missing number is "+i);
+        }
+        
+      }
     }
 }
